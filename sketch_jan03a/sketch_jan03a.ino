@@ -36,18 +36,6 @@ void setup() {
 void loop() {
   // Wait a few seconds between measurements.
 
- int ctsValue = digitalRead(ctsPin);
- if (ctsValue==1) {
-    if (mydelay==300){
-      mydelay = 2000;  
-    } else {
-      mydelay = 300;
-    }
-    
-    Serial.print("boton: ");
-    Serial.println(ctsValue);    
- } 
-
   //delay(600);
 
   // Reading temperature or humidity takes about 250 milliseconds!
@@ -67,6 +55,15 @@ void loop() {
   Serial.print(t);
   Serial.println(" *C ");
   delay(mydelay);
+
 }
 
+void ajustarIntervalo() {
+ 
 
+    if (mydelay==300){
+      mydelay = 2000;  
+    } else {
+      mydelay = 300;
+    } 
+}
