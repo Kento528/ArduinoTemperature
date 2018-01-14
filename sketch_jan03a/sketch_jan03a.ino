@@ -22,7 +22,7 @@
 const int DHTPin = 5;     // what digital pin we're connected to
 int n = 0;
 DHT dht(DHTPin, DHTTYPE);
-int mydelay = 500;
+int mydelay = 300;
 void setup() {
   Serial.begin(9600);
   Serial.println("DHTxx test!");
@@ -38,10 +38,10 @@ void loop() {
 
  int ctsValue = digitalRead(ctsPin);
  if (ctsValue==1) {
-    if (mydelay==500){
+    if (mydelay==300){
       mydelay = 2000;  
     } else {
-      mydelay = 500;
+      mydelay = 300;
     }
     
     Serial.print("boton: ");
