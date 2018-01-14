@@ -25,7 +25,7 @@ DHT dht(DHTPin, DHTTYPE);
 int mydelay = 300;
 void setup() {
   pinMode(ctsPin, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(ctsPin), ajustarIntervalo, RISING);
+  attachInterrupt(digitalPinToInterrupt(ctsPin), ajustarIntervalo, FALLING);
 
   
   Serial.begin(9600);
