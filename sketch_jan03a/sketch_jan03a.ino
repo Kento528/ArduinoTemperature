@@ -24,10 +24,14 @@ int n = 0;
 DHT dht(DHTPin, DHTTYPE);
 int mydelay = 300;
 void setup() {
+  pinMode(ctsPin, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(ctsPin), ajustarIntervalo, RISING);
+
+  
   Serial.begin(9600);
   Serial.println("DHTxx test!");
   pinMode(ledPin, OUTPUT);  
-  pinMode(ctsPin, INPUT);
+ // pinMode(ctsPin, INPUT);
   pinMode(kntpin, INPUT);
 
   dht.begin();
@@ -47,7 +51,8 @@ void loop() {
     return;
   }
 
-
+  Serial.print("mydelay: ");
+  Serial.println(mydelay);
   Serial.print("Humidity: ");
   Serial.print(h);
   Serial.println(" %\t");
