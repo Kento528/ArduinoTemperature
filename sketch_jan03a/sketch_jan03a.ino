@@ -59,6 +59,12 @@ void loop() {
   Serial.print("Temperature: ");
   Serial.print(t);
   Serial.println(" *C ");
+  if (t>31) {
+    digitalWrite (ledPin, HIGH); 
+  }
+  else {
+    digitalWrite (ledPin, LOW);
+  }
   delay(mydelay);
 
 }
